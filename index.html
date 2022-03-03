@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XGostoso</title>
 </head>
+
 <body>
-    <p style="background-color: rgb(154, 199, 250); color: rgb(92, 1, 172);">Hambugueria Xgostoso</p>
-    <form>
-        <div class="row g-2">
-            <div class="col-md">
-                <label for="floatingInputGrid" class="form-label">Ciberpunk</label>
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="(15)9687-1587" value="">
+    <div class="container">
+        <div class="alert alert-primary" role="alert">
+            <strong> Hamburgueria XGostoso </strong>
+            <div id="real-clock"></div>
+        </div>
+
+        <form id="idFormulario">
+            <div class="form row">
+                <div class="form-group col-md-6">
+                    <label for="idTelefone">Telefone</label>
+                    <input type="telefone" class="form-control" id="idTelefone" placeholder="Ex: 15995814789" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="idNome">Nome do Cliente </label>
+                    <input type="text" class="form-control" id="idNome" required>
+                </div>
             </div>
-            <div class="col-md">
-                <label for="floatingInputGrid" class="form-label">Nome do cliente</label>
-                <input type="email" class="form-control" id="floatingInputGrid" placeholder="Ronaldinho" value="">
+            <br>
+            <div class="form row">
+
+                <div class="col-6 col-md-6>">
+                    <label for="idCombo">Combo</label>
+                    <select class="form-control" id="idCombo">
+                        <option id="comboBacon" value="12.0"> XBacon </option>
+                        <option id="comboVegie" value="10.0"> XVegie </option>
+                    </select>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <p>Adicionais</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="idBacon" value="3.0" name="adicionais"
+                            checked>
+                        <label class="form-check-label" for="idBacon"> Bacon</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="idCheddar" value="2.5" name="adicionais">
+                        <label class="form-check-label" for="idCheddar"> Cheddar</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="idPicles" value="2.0" name="adicionais">
+                        <label class="form-check-label" for="idPicles"> Picles</label>
+                    </div>
+
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <label>Entrega? </label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="entrega" id="idViagem" value="7.50">
+                        <label class="form-check-label" for="idViagem"> Para viagem </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="entrega" id="idBalcao" value="0.0">
+                        <label class="form-check-label" for="idBalcao"> Balcão </label>
+                    </div>
+                </div>
             </div>
-          </div>
-    </form>
+
+            <center>
+                <div class="form-row">
+                    <br>
+                    <input type="button" value="Calcular Pedido" onclick="calculuarPedido()" class="btn btn-primary">
+                    <input type="button" value="Novo Pedido" onclick="novoPedido()" class="btn btn-primary"
+                        style="margin-left: 20px;">
+                    <input type="button" value="Recibo" onclick="recibo()" class="btn btn-primary"
+                        style="margin-left: 20px;">
+                </div>
+            </center>
+
+            <br>
+            <label> Total a pagar: </label>
+            <input type="text" id="idTotalPagar" readonly class="form-control">
+
+            <br>
+            <label for="descrPedido">Descrição do Pedido </label>
+            <textarea name="descrPedido" id="descrPedido" rows="4" class="form-control" readonly></textarea>
+
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="scriptXgostoso.js"></script>
 </body>
+
 </html>
